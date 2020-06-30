@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html>
+
+<style>
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+</style>
+
  <head>
    <title>Lessons Learned</title>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -20,14 +33,22 @@
        <div class="collapse navbar-collapse" id="navbarCollapse">
          <ul class="navbar-nav mr-auto">
              <li class="nav-item" data-turbolinks="false">
-               <a class="nav-link{% if request.resolver_match.view_name == 'calendar' %} active{% endif %}" href="{% url 'll:search' %}">Search</a>
+               <a class="nav-link" href="{% url 'll:search' %}">Search</a>
              </li>
          </ul>
-         <ul class="navbar-nav justify-content-end">
                 <img src="{% static "images/Schemmer(white).png" %}" alt="schemmer"/>
          </ul>
        </div>
    </nav>
+
+   <nav class="navbar navbar-expand-md navbar navbar-dark fixed-bottom" style="background-color: #006595;">
+    <ul class="navbar-nav justify-content-end">
+        <a href="mailto:lessonslearned@schemmer.com">lessonslearned@schemmer.com </a>
+        <a href="https://www.w3schools.com/html/html_links.asp">| wiki |</a>
+        <a href="https://www.w3schools.com/html/html_links.asp"> interface </a>
+    </ul>
+   </nav>
+
    <main role="main" class="container">
      {% if errors %}
        {% for error in errors %}

@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html>
+
+<style>
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+</style>
+
  <head>
    <title>Lessons Learned</title>
 
@@ -11,8 +24,7 @@
    <link rel="stylesheet" href="{% static "css/portfolio.css" %}">
  </head>
 
- <div class="page-header">
- <body>
+<body>
 <nav class="navbar navbar-expand-md navbar navbar-dark fixed-top" style="background-color: #006595;">
   <a href="{% url 'll:home' %}" class="navbar-brand">Lessons Learned</a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -23,7 +35,7 @@
          <ul class="navbar-nav mr-auto">
            {% if user.is_authenticated %}
              <li class="nav-item" data-turbolinks="false">
-               <a class="nav-link{% if request.resolver_match.view_name == 'search' %} active{% endif %}" href="{% url 'll:search' %}">Search</a>
+               <a class="nav-link" href="{% url 'll:search' %}">Search</a>
              </li>
            {% endif %}
          </ul>
@@ -52,6 +64,16 @@
          </ul>
        </div>
    </nav>
+
+<nav class="navbar navbar-expand-md navbar navbar-dark fixed-bottom" style="background-color: #006595;">
+    <ul class="navbar-nav justify-content-end">
+        <a href="mailto:lessonslearned@schemmer.com">lessonslearned@schemmer.com </a>
+        <a href="https://www.w3schools.com/html/html_links.asp">| wiki |</a>
+        <a href="https://www.w3schools.com/html/html_links.asp"> interface </a>
+    </ul>
+</nav>
+
+
    <main role="main" class="container">
      {% if errors %}
        {% for error in errors %}
@@ -75,6 +97,5 @@
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
      crossorigin="anonymous"></script>
- </body>
-  </div>
+</body>
 </html>

@@ -64,7 +64,7 @@ class Marketsector(models.Model):
 
 class Memo(models.Model):
     projectnumber = models.ForeignKey(Projectnumber, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
+    name = models.TextField()
 
     def __str__(self):
         return "%s" % self.name
@@ -113,6 +113,7 @@ class Lesson(models.Model):
         blank = True,
         null=True
     )
+    topic = models.CharField(max_length=100)
     linkfile = models.CharField(max_length=50, blank=True)
     created_date = models.DateTimeField(
         default=timezone.now)

@@ -14,10 +14,11 @@ class LessonFilter(django_filters.FilterSet):
     discipline = django_filters.CharFilter(lookup_expr='icontains')
     author = django_filters.CharFilter(lookup_expr='icontains')
     memo__ = django_filters.CharFilter(lookup_expr='icontains')
+    topic = django_filters.CharFilter(lookup_expr='icontains')
 
     class Meta:
         model = Lesson
         fields = [
                 'projectnumber','projectname', 'client','projectlocation', 'description',
-                'division','marketsector','discipline','author','memo',
+                'division','marketsector','discipline','author','memo', 'topic'
         ]
